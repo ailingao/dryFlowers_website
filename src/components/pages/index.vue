@@ -1,12 +1,11 @@
 <template>
 <div>
-  <navbar></navbar>
+  <!-- <navbar></navbar> -->
+  <mobileNav></mobileNav>
 </div>
 </template>
 <script>
-$(function(){
-  
-})
+import mobileNav from '../components/mobileNav.vue'
 export default {
   data(){
     return{
@@ -14,7 +13,7 @@ export default {
     }
   },
   components:{
-    
+    mobileNav
   }
 }
 </script>
