@@ -5,6 +5,9 @@
   </div>
   <div class="yn_list">
     <ul>
+      <li>
+        <a class="active" href="#">首页</a>
+      </li>
       <li v-for="(item,index) in 6" :key="index">
         <a href="#" class="yn_listTitle">测试标题</a>
         <div class="yn_listItem">
@@ -61,6 +64,20 @@ export default {
 .yn_list a{
   text-decoration: none;
   color: #555;
-  font-weight: 600;
+  font-weight: bold;
+  display: block;
+}
+.yn_listTitle{
+  font-size: 14px;
+  padding: 12px 0;
+  line-height: 1;
+}
+.yn_listItem a{
+  font-size: 12px;
+  padding: 12px 15px 12px 30px;
+}
+.active{
+  background: #FF6651;
+  color: #fff;
 }
 </style>
