@@ -1,14 +1,40 @@
 <template>
 <div :class="sliderState?classOne:classOneTwo">
+  <!-- 移动端左侧导航条 -->
   <mobileNav @menuClickTwo="getMenuClickTwo"></mobileNav>
+  <!-- 移动端左侧导航条 -->
+  <!-- 网站内容 -->
   <div class="yn_mainContent" :style="height">
+    <!-- 遮罩层 -->
     <div class="yn_mask" @click="hideSlider"></div>
+    <!-- 遮罩层 -->
+    <!-- 网站pc导航栏 -->
     <navbar :state="state" @menuClick="getMenuClick"></navbar>
+    <!-- 网站pc导航栏 -->
+    <!-- 广告位 -->
+    <advertSpace></advertSpace>
+    <!-- 广告位 -->
+    <!-- 下方左右布局内容 -->
+    <div class="yn_container container-fluid">
+      <div class="row clearfix">
+        <div class="col-xs-12 col-sm-12 col-md-8 yn_containerLeft">
+          <mainLeft></mainLeft>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 yn_containerRight">
+          <mainRight></mainRight>
+        </div>
+      </div>
+    </div>
+    <!-- 下方左右布局内容 -->
   </div>
+  <!-- 网站内容 -->
 </div>
 </template>
 <script>
 import mobileNav from '../components/mobileNav.vue'
+import advertSpace from '../components/advertSpace'
+import mainLeft from '../components/mainLeft'
+import mainRight from '../components/mainRight'
 export default {
   data(){
     return{
@@ -45,7 +71,10 @@ export default {
     }
   },
   components:{
-    mobileNav
+    mobileNav,
+    advertSpace,
+    mainLeft,
+    mainRight
   }
 }
 </script>
@@ -91,6 +120,12 @@ export default {
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+  }
+  .container-fluid{
+    max-width: 1200px;
+  }
+  .yn_container{
+    padding-bottom: 10px;
   }
 </style>
 

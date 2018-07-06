@@ -208,7 +208,7 @@ export default {
 .u-arrow {display: inline-block;width: 7px;height: 7px;border-top: 1px solid #555;border-right: 1px solid #555;}
 .u-arrow-down {transform: rotate(135deg);margin-left: 5px;top: 35px;position: absolute;}
 .logo img{height: 40px;margin-top: 20px;margin-right: 50px;padding-left: 15px;}
-.yn_nav{/* height: 79px; */border: none;height: auto;background: #fff;}
+.yn_nav{/* height: 79px; */border: none;height: auto;background: #fff;margin-bottom: 0;}
 .navbar-brand{padding: 0;}
 .nav>li>a{padding: 0;}
 .yn_item .li{margin-right: 20px;position: relative;}
