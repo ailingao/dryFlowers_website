@@ -185,14 +185,14 @@ export default {
 .yn_itemList{-webkit-transition: all .3s ease-in-out;-moz-transition: all .3s ease-in-out;transition: all .3s ease-in-out;visibility: hidden;opacity: 0;position: absolute;top: 100%;left: 50%;margin-top: -25px;background-color: #fff;font-size: 14px;padding: 6px 0;border: 1px solid #999;box-shadow: 0 0 10px rgba(0,0,0,0.1);line-height: 32px;width: 140px;margin-left: -78px;list-style: none;text-align: center;border-radius: 2px;z-index: 999;}
 .yn_btnGroup{float: right;}
 .yn_searchGroup{margin-top: 22px;display: block;float: left;}
-.yn_keyWordInput{width: 180px !important;height: 32px;border: 1px solid #eee;padding: 0 8px;font-size: 14px;color: #999;}
+.yn_keyWordInput{width: 180px !important;height: 32px;border: 1px solid #eee;padding: 0 8px;font-size: 14px;color: #999;border-radius: 0;}
 .yn_keyWordInput:focus{outline:none;box-shadow:none;border: 1px solid #FF6651; }
 .yn_searchBtn{width: 36px;height: 32px;padding: 4px 10px;font-size: 14px;background: #FF6651;color: #fff;border: none;margin-left: -4px;}
 .yn_searchBtn:focus{outline:none;box-shadow:none;}
 .yn_searchBtn:hover{background: #FF5640;color:#eee;}
 .yn_btnGroupTwo{float: right;}
 .yn_searchGroupTwo{margin-top: 22px;display: block;float: left;}
-.yn_keyWordInputTwo{width: 180px !important;height: 32px;border: 1px solid #eee;padding: 0 8px;font-size: 14px;color: #999;}
+.yn_keyWordInputTwo{width: 180px !important;height: 32px;border: 1px solid #eee;padding: 0 8px;font-size: 14px;color: #999;border-radius: 0;}
 .yn_keyWordInputTwo:focus{outline:none;box-shadow:none;border: 1px solid #FF6651; }
 .yn_searchBtnTwo{width: 36px;height: 32px;padding: 4px 10px;font-size: 14px;background: #FF6651;color: #fff;border: none;margin-left: -4px;}
 .yn_searchBtnTwo:focus{outline:none;box-shadow:none;}
