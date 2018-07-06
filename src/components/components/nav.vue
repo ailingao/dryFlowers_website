@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="yn_navMain">
   <nav class="navbar navbar-default yn_nav">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -67,6 +67,7 @@ $(function(){
   
 })
 export default {
+  props:['state'],
   data(){
     return{
       searchState:false,//搜索框状态
@@ -117,7 +118,8 @@ export default {
       }
     },
     menu(){
-      
+      this.$emit('menuClick','0')
+      this.menuState=false
     },
     toOthers(index){
       this.actIndex=index
@@ -133,7 +135,7 @@ export default {
       }
   },
   created(){
-    this.screenWidth=document.body.clientWidth
+    this.screenWidth=document.documentElement.clientWidth || document.body.clientWidth
   },
   watch: {
       screenWidth (val) {
@@ -155,11 +157,16 @@ export default {
           //   this.logoState=true
           //   this.searchContainer=false
           // }
+      },
+      state(val){
+        if(!val){
+          this.menuState=true
+        }
       }
   }
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .yn_showQRCode img{width: 100%;}
 .yn_showQRCode::before, .yn_showQRCode::after {content: '';position: absolute;top: -5px;left: 50%;margin-left: -3px;border-left: 5px solid transparent;border-right: 5px solid transparent;}
 .yn_showQRCode::before {border-bottom: 5px solid #555;}
@@ -201,7 +208,7 @@ export default {
 .u-arrow {display: inline-block;width: 7px;height: 7px;border-top: 1px solid #555;border-right: 1px solid #555;}
 .u-arrow-down {transform: rotate(135deg);margin-left: 5px;top: 35px;position: absolute;}
 .logo img{height: 40px;margin-top: 20px;margin-right: 50px;padding-left: 15px;}
-.yn_nav{/* height: 79px; */border: none;border-bottom: 1px solid #eee;height: auto;background: #fff;}
+.yn_nav{/* height: 79px; */border: none;height: auto;background: #fff;}
 .navbar-brand{padding: 0;}
 .nav>li>a{padding: 0;}
 .yn_item .li{margin-right: 20px;position: relative;}
