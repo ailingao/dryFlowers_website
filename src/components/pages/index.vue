@@ -4,7 +4,7 @@
   <mobileNav @menuClickTwo="getMenuClickTwo"></mobileNav>
   <!-- 移动端左侧导航条 -->
   <!-- 网站内容 -->
-  <div class="yn_mainContent" :style="height">
+  <div class="yn_mainContent clearfix" :style="height">
     <!-- 遮罩层 -->
     <div class="yn_mask" @click="hideSlider"></div>
     <!-- 遮罩层 -->
@@ -18,23 +18,41 @@
     <div class="yn_container container-fluid">
       <div class="row clearfix">
         <div class="col-xs-12 col-sm-12 col-md-8 yn_containerLeft">
+          <!-- 主页中心 左侧-->
           <mainLeft></mainLeft>
+          <!-- 主页中心 左侧-->
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 yn_containerRight">
-          <mainRight></mainRight>
+          <!-- 主页右侧模块一 -->
+          <rightBoxOne></rightBoxOne>
+           <!-- 主页右侧模块一 结束-->
+          <!-- 主页右侧模块二 -->
+          <rightBoxTwo></rightBoxTwo>
+          <!-- 主页右侧模块二结束 --> 
+          <!--  右侧二维码 -->
+          <wxERCode></wxERCode>
+           <!--  右侧二维码 -->
         </div>
       </div>
+     
     </div>
     <!-- 下方左右布局内容 -->
+    <!-- 页脚 -->
+      <bottomFooter></bottomFooter>
+    <!-- 页脚 -->
   </div>
   <!-- 网站内容 -->
+ 
 </div>
 </template>
 <script>
 import mobileNav from '../components/mobileNav.vue'
 import advertSpace from '../components/advertSpace'
 import mainLeft from '../components/mainLeft'
-import mainRight from '../components/mainRight'
+import rightBoxTwo from '../components/rightBoxTwo'
+import rightBoxOne from '../components/rightBoxOne'
+import wxERCode from '../components/wxERCode'
+import bottomFooter from '../components/bottomFooter'
 export default {
   data(){
     return{
@@ -74,7 +92,10 @@ export default {
     mobileNav,
     advertSpace,
     mainLeft,
-    mainRight
+    rightBoxTwo,
+    rightBoxOne,
+    wxERCode,
+    bottomFooter
   }
 }
 </script>
