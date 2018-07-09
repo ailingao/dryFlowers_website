@@ -151,8 +151,5 @@ export default {
   .yn_mainContent{
     overflow-y: scroll;
   }
-  @media (max-width: 767px) {
-    .yn_containerRight{display: none;}
-  }
 </style>
 

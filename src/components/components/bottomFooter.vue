@@ -42,12 +42,16 @@ export default {
 </script>
 <style lang="less" scoped>
   .footer{
-    background: #384047;
+    background: #333;
     margin:0;
     padding-bottom: 20px;
     padding-top: 20px
   }
   .footer a{
+    color: #bbb;
+    font-size: 12px;
+  }
+  .footer a:hover{
     color: #fff;
   }
 </style>

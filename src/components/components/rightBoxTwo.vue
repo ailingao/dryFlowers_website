@@ -1,7 +1,16 @@
 <template>
 <div>
-     <div class="yn_topTips">
-        <span> 热门标签</span>
+    <div class="yn_topTips">
+      <div class="yn_toptipsLeft">
+        <span class="yn_title"> 最近更新</span>
+        <span class="glyphicon glyphicon-hand-down"></span>
+      </div>
+      <div class="yn_toptipsRight">
+        <span class="yn_title">手工艺品</span>
+        <span>传统手工</span>
+        <span>手工达人</span>
+        <i class="fa fa-angle-double-right"></i>
+      </div>
     </div>
     <div class="rightModel2 clearfix">
         <div class="col-md-4" v-for="(item,index) in 29" :key="index">
@@ -43,6 +52,28 @@ export default {
   text-align: left;
   padding: 0 10px;
   margin-top: 10px;
+  overflow: hidden;
+}
+.yn_tipsIcon{
+  color: #ff6651;
+}
+.yn_toptipsRight{
+  float: right;
+}
+.yn_toptipsRight{
+  color: #666;
+  font-weight: normal;
+  font-size: 12px;
+  cursor: pointer;
+}
+.yn_toptipsRight span:hover{
+  color: #ff6651;
+}
+.yn_toptipsLeft{
+  float: left;
+}
+.yn_toptipsLeft .yn_title{
+  font-weight: bold;
 }
 //右侧模块2
 .rightModel2 {
