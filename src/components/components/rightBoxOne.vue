@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="rightModel clearfix">
-        <div class="col-md-4" v-for="(item,index) in 8" :key="index">
+        <div class="col-sm-3 col-md-4 col-lg-4" v-for="(item,index) in 8" :key="index">
             <a href="">
             <img src="https://www.shouyihuo.com/uploads/allimg/180606/4-1P6061552570-L.jpg" class="img-responsive" alt="干花">
             </a>

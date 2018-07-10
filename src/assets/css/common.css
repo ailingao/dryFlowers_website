@@ -1,0 +1,40 @@
+.yn_topTips {
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+    line-height: 45px;
+    font-size: 16px;
+    color: #666;
+    text-align: left;
+    padding: 0 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.yn_tipsIcon {
+    color: #ff6651;
+}
+
+.yn_toptipsRight {
+    float: right;
+}
+
+.yn_toptipsRight {
+    color: #666;
+    font-weight: normal;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.yn_toptipsRight span:hover {
+    color: #ff6651;
+}
+
+.yn_toptipsLeft {
+    float: left;
+}
+
+.yn_toptipsLeft .yn_title {
+    font-weight: bold;
+}

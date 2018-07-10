@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="rightModel2 clearfix">
-        <div class="col-md-4" v-for="(item,index) in 29" :key="index">
+        <div class="col-sm-3 col-md-4 col-lg-4" v-for="(item,index) in 29" :key="index">
             <a href="">
                 干枯玫瑰
             </a>

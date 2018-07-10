@@ -44,8 +44,7 @@ export default {
   .footer{
     background: #333;
     margin:0;
-    padding-bottom: 20px;
-    padding-top: 20px
+    padding: 20px 15px;
   }
   .footer a{
     color: #bbb;

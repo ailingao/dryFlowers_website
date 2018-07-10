@@ -7,7 +7,7 @@
         <span class="sitenav-on"><i class="glyphicon glyphicon-align-justify"></i></span>
       </div>
       <a class="navbar-brand logo" href="#" v-show="logoState">
-        <img class="" src="../../assets/logo.png" alt="">
+        <img class="" src="../../assets/images/logo.png" alt="">
       </a>
       <div class="navbar-toggle collapsed yn_searchIcon" @click="showSearch" v-show="searchBtnState">
         <span class="sitenav-on"><i class="glyphicon glyphicon-search"></i></span>
@@ -36,7 +36,7 @@
             <button class=" yn_weixinIcon" type="button">
               <i class="fab fa-weixin"></i>
               <div class="yn_showQRCode">
-                <img src="../../assets/weixinsys.jpg" alt="">
+                <img src="../../assets/images/weixinsys.jpg" alt="">
               </div>
             </button>
             <button class=" yn_weiboIcon" type="button">

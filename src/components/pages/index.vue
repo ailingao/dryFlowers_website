@@ -121,6 +121,7 @@ export default {
     transform: translateX(0%);
     -webkit-transition-duration: 400ms;
     transition-duration: 400ms;
+    overflow-y: scroll;
   }
   .slider_nav .yn_mask{
     display: block;
@@ -149,10 +150,13 @@ export default {
     padding-bottom: 10px;
   }
   .yn_mainContent{
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
   }
   @media (max-width: 767px) {
     .yn_containerRight{display: none;}
+  }
+  @media (max-width: 992px) {
+    .wxERCode{display: none;}
   }
 </style>
 

@@ -1,6 +1,6 @@
 <template>
 <div class="yn_advertSpace">
-  <img src="../../assets/weixin.gif" alt="">
+  <img src="../../assets/images/weixin.gif" alt="">
 </div>
 </template>
 <script>

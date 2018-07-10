@@ -1,9 +1,9 @@
 <template>
 <div class="wxERCode">
-   <img src="../../assets/wx.png" alt="">
+   <img src="../../assets/images/wx.png" alt="">
    <div class="ewm yn_showQRCode">
        <p>官方微信公众号： 云南干花网</p>
-       <img src="../../assets/weixinsys.jpg" alt="">
+       <img src="../../assets/images/weixinsys.jpg" alt="">
    </div>
 </div>
 </template>

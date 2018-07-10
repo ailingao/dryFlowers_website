@@ -14,7 +14,7 @@
     </div>
     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 yn_imgItem" v-for="(item,index) in 13" :key="index">
       <a href="#" class="yn_goLink">
-        <img src="../../assets/4-1PF61254400-L.jpg" alt="">
+        <img src="../../assets/images/4-1PF61254400-L.jpg" alt="">
         <a class="a" href="#">麂皮绳手链的编法图解 双色皮革编织手链教程343423432423</a>
       </a>
       <div class="yn_imgItemBtm">

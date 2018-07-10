@@ -11,13 +11,13 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="yn_swiperImg" src="../../assets/slidexsg.jpg" alt="...">
+          <img class="yn_swiperImg" src="../../assets/images/slidexsg.jpg" alt="...">
           <div class="carousel-caption">
             第一张图
           </div>
         </div>
         <div class="item">
-          <img class="yn_swiperImg" src="../../assets/slidexsg.jpg" alt="...">
+          <img class="yn_swiperImg" src="../../assets/images/slidexsg.jpg" alt="...">
           <div class="carousel-caption">
             第二张图
           </div>
