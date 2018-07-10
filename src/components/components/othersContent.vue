@@ -1,29 +1,15 @@
 <template>
   <div class="leftBoxTwo clearfix">
-    <div class="yn_topTips">
+    <div class="yn_topTipsTwo">
       <div class="yn_toptipsLeft">
-        <span class="yn_title"> 最近更新</span>
-        <span class="glyphicon glyphicon-hand-down"></span>
-      </div>
-      <div class="yn_toptipsRight">
-        <span class="yn_title">手工艺品</span>
-        <span>传统手工</span>
-        <span>手工达人</span>
-        <i class="fa fa-angle-double-right"></i>
+        <span class="yn_title">相关内容</span>
       </div>
     </div>
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 yn_imgItem" v-for="(item,index) in 13" :key="index" @click="toOthers">
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 yn_imgItem" v-for="(item,index) in 13" :key="index">
       <a href="javascript:void(0)" class="yn_goLink">
         <img src="../../assets/images/4-1PF61254400-L.jpg" alt="">
         <a class="a" href="javascript:void(0)">麂皮绳手链的编法图解 双色皮革编织手链教程343423432423</a>
       </a>
-      <div class="yn_imgItemBtm">
-        <div class="yn_btmleft">阅读(20)</div>
-        <div class="yn_btmright">
-          <span class="glyphicon glyphicon-heart-empty"></span>
-          <span>23</span>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -35,9 +21,7 @@ export default {
     }
   },
   methods:{
-    toOthers(){
-      this.$router.push({'path':'/detail'})
-    }
+    
   },
 
   created(){
@@ -54,9 +38,7 @@ export default {
 //   overflow: hidden;
 // }
 //标题
-.yn_topTips{
-  background: #fafafa;
-  border-bottom: 1px solid #ddd;
+.yn_topTipsTwo{
   line-height: 45px;
   font-size: 16px;
   color: #666;
@@ -117,6 +99,7 @@ export default {
   overflow: hidden;
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 .yn_goLink a:hover{
   color: #ff6651;

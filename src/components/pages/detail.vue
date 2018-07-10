@@ -19,7 +19,13 @@
       <div class="row clearfix">
         <div class="col-xs-12 col-sm-12 col-md-8 yn_containerLeft">
           <!-- 主页中心 左侧-->
-          <mainLeft></mainLeft>
+          <div class="yn_mainLeft">
+            <breadcrumb></breadcrumb>
+            <detailContent></detailContent>
+            <share></share>
+            <othersContent></othersContent>
+          </div>
+          <!-- <mainLeft></mainLeft> -->
           <!-- 主页中心 左侧-->
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 yn_containerRight">
@@ -53,6 +59,10 @@ import rightBoxTwo from '../components/rightBoxTwo'
 import rightBoxOne from '../components/rightBoxOne'
 import wxERCode from '../components/wxERCode'
 import bottomFooter from '../components/bottomFooter'
+import breadcrumb from '../components/breadcrumb'
+import detailContent from '../components/detailContent'
+import share from '../components/share'
+import othersContent from '../components/othersContent'
 export default {
   data(){
     return{
@@ -95,7 +105,11 @@ export default {
     rightBoxTwo,
     rightBoxOne,
     wxERCode,
-    bottomFooter
+    bottomFooter,
+    breadcrumb,
+    detailContent,
+    share,
+    othersContent
   }
 }
 </script>
@@ -121,6 +135,7 @@ export default {
     transform: translateX(0%);
     -webkit-transition-duration: 400ms;
     transition-duration: 400ms;
+    overflow-y: scroll;
   }
   .slider_nav .yn_mask{
     display: block;
@@ -149,7 +164,13 @@ export default {
     padding-bottom: 10px;
   }
   .yn_mainContent{
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+  }
+  @media (max-width: 767px) {
+    .yn_containerRight{display: none;}
+  }
+  @media (max-width: 992px) {
+    .wxERCode{display: none;}
   }
 </style>
 

@@ -6,7 +6,7 @@
       <div class="navbar-toggle collapsed yn_menu" @click="menu" v-show="menuState">
         <span class="sitenav-on"><i class="glyphicon glyphicon-align-justify"></i></span>
       </div>
-      <a class="navbar-brand logo" href="#" v-show="logoState">
+      <a class="navbar-brand logo" href="javascript:void(0)" v-show="logoState" @click="goIndex">
         <img class="" src="../../assets/images/logo.png" alt="">
       </a>
       <div class="navbar-toggle collapsed yn_searchIcon" @click="showSearch" v-show="searchBtnState">
@@ -14,16 +14,16 @@
       </div>
       <div class="collapse navbar-collapse" >
         <ul class="nav navbar-nav yn_item" v-show="navState">
-          <!-- <li class="active li" ><a class="a" href="#">首页</a></li> -->
+          <!-- <li class="active li" ><a class="a" href="javascript:void(0)">首页</a></li> -->
           <li v-for="(item,index) in 6" :key="index" :class="actIndex==index?'active li':'li'"  @click="toOthers(index)">
-            <a class="a" href="#">小制作</a>
+            <a class="a" href="javascript:void(0)">小制作</a>
             <ul class="yn_itemList">
-              <li v-for="(item,index) in 8" :key="index">
-                <a href="#">小制作</a>
+              <li v-for="(item,index) in 8" :key="index" @click.stop="toSecond">
+                <a href="javascript:void(0)">小制作</a>
               </li>
             </ul>
           </li>
-          <li class="li"><a href="#" class="yn_itemMore a">更多<span class="u-arrow u-arrow-down"></span></a></li>
+          <li class="li"><a href="javascript:void(0)" class="yn_itemMore a">更多<span class="u-arrow u-arrow-down"></span></a></li>
         </ul>
         <div class="yn_btnGroup">
           <div class="yn_searchGroup">
@@ -123,6 +123,14 @@ export default {
     },
     toOthers(index){
       this.actIndex=index
+      this.$router.push({'path':'/common'})
+    },
+    goIndex(){
+      this.actIndex='0'
+      this.$router.push({'path':'/index'})
+    },
+    toSecond(){
+      this.$router.push({'path':'/detail'})
     }
   },
   mounted () {

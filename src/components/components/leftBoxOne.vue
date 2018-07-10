@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="yn_originalMain clearfix">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 yn_original" v-for="(item,index) in 7" :key="index">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 yn_original" v-for="(item,index) in 7" :key="index" @click="toOthers">
         <div class="yn_originalItem col-xs-9 col-sm-9 col-md-9 col-lg-9">
           <span class="glyphicon glyphicon-minus"></span>
           <span class="span">晚晨的创意DIY：废旧电脑键盘鼠标制作机器人</span>
@@ -29,7 +29,9 @@ export default {
     }
   },
   methods:{
-    
+    toOthers(){
+      this.$router.push({'path':'/detail'})
+    }
   },
 
   created(){
@@ -93,6 +95,9 @@ export default {
   color: #555;
   font-size: 14px;
   padding-left: 10px;
+}
+.yn_originalItem:hover>span{
+  color: #ff6651;
 }
 .yn_originalItem{
   overflow: hidden;

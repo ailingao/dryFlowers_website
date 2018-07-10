@@ -1,3 +1,15 @@
+@media (max-width: 767px) {
+    .yn_containerRight {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .wxERCode {
+        display: none;
+    }
+}
+
 .yn_topTips {
     background: #fafafa;
     border-bottom: 1px solid #ddd;

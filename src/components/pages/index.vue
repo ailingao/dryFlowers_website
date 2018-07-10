@@ -19,7 +19,19 @@
       <div class="row clearfix">
         <div class="col-xs-12 col-sm-12 col-md-8 yn_containerLeft">
           <!-- 主页中心 左侧-->
-          <mainLeft></mainLeft>
+          <div class="yn_mainLeft">
+            <div class="yn_topTips">
+              <span class="glyphicon glyphicon-volume-up yn_tipsIcon"></span>
+              <span> 微信公众号：DIY手工制作小站 ，欢迎关注！</span>
+            </div>
+            <swiper></swiper>
+            <breadcrumb></breadcrumb>
+            <ynlabel></ynlabel>
+            <leftBoxOne></leftBoxOne>
+            <leftBoxTwo></leftBoxTwo>
+            <pagination></pagination>
+          </div>
+          <!-- <mainLeft></mainLeft> -->
           <!-- 主页中心 左侧-->
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 yn_containerRight">
@@ -53,6 +65,12 @@ import rightBoxTwo from '../components/rightBoxTwo'
 import rightBoxOne from '../components/rightBoxOne'
 import wxERCode from '../components/wxERCode'
 import bottomFooter from '../components/bottomFooter'
+import swiper from '../components/swiper'
+import leftBoxOne from '../components/leftBoxOne'
+import leftBoxTwo from '../components/leftBoxTwo'
+import ynlabel from '../components/label'
+import pagination from '../components/pagination'
+import breadcrumb from '../components/breadcrumb'
 export default {
   data(){
     return{
@@ -95,7 +113,14 @@ export default {
     rightBoxTwo,
     rightBoxOne,
     wxERCode,
-    bottomFooter
+    bottomFooter,
+    swiper,
+    leftBoxOne,
+    leftBoxTwo,
+    ynlabel,
+    pagination,
+    breadcrumb
+
   }
 }
 </script>
@@ -151,12 +176,6 @@ export default {
   }
   .yn_mainContent{
     /* overflow-y: scroll; */
-  }
-  @media (max-width: 767px) {
-    .yn_containerRight{display: none;}
-  }
-  @media (max-width: 992px) {
-    .wxERCode{display: none;}
   }
 </style>
 

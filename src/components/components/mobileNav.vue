@@ -7,19 +7,19 @@
     <ul>
       <li>
         <div class="active">
-          <a class="yn_listTitle" href="#">测试标题</a>
+          <a class="yn_listTitle" href="javascript:void(0)">测试标题</a>
         </div>
       </li>
       <li v-for="(item,index) in 6" :key="index">
-        <!-- <a href="#" class="yn_listTitle">测试标题</a> -->
+        <!-- <a href="javascript:void(0)" class="yn_listTitle">测试标题</a> -->
         <div @click="toOthers($event)" >
-          <a class="yn_listTitle" href="#">测试标题</a>
+          <a class="yn_listTitle" href="javascript:void(0)">测试标题</a>
         </div>
         <div @click="toOthers($event)">
-          <a class="yn_listItem" href="#">测试列表</a>
+          <a class="yn_listItem" href="javascript:void(0)">测试列表</a>
         </div>
         <div  @click="toOthers($event)">
-          <a class="yn_listItem" href="#">测试列表</a>
+          <a class="yn_listItem" href="javascript:void(0)">测试列表</a>
         </div>
       </li>
     </ul>
@@ -37,10 +37,22 @@ export default {
   methods:{
     toOthers(e){
       console.log(e.currentTarget.index)
+      this.$router.push({'path':'/common'})
     },
     menu(){
       this.$emit('menuClickTwo','1')
     },
+    toOthers(index){
+      this.actIndex=index
+      this.$router.push({'path':'/common'})
+    },
+    goIndex(){
+      this.actIndex='0'
+      this.$router.push({'path':'/index'})
+    },
+    toSecond(){
+      this.$router.push({'path':'/detail'})
+    }
   },
 
   created(){
