@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+import qs from 'qs'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import fontawesome from '@fortawesome/fontawesome'
@@ -20,9 +22,10 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
     //公用组件引用
 import nav from './components/components/nav.vue'
-// 公用组件全局注册
+Vue.prototype.$ajax = axios
+Vue.prototype.$qs = qs
+    // 公用组件全局注册
 Vue.component('navbar', nav)
-Vue.prototype.na
     /* eslint-disable no-new */
 new Vue({
     el: '#app',
