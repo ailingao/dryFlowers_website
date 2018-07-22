@@ -71,6 +71,8 @@ import leftBoxTwo from '../components/leftBoxTwo'
 import ynlabel from '../components/label'
 import pagination from '../components/pagination'
 import breadcrumb from '../components/breadcrumb'
+
+import base from '../../assets/js/url.js'
 export default {
   data(){
     return{
@@ -84,6 +86,7 @@ export default {
   },
   created(){
     this.height='height:'+(document.documentElement.clientHeight || document.body.clientHeight)+'px'
+    this.initData()
   },
   methods:{
     getMenuClick(val){//接收主菜单导航按钮点击传值
@@ -104,6 +107,20 @@ export default {
     hideSlider(){//点击遮罩层
       this.sliderState=false
       this.state=false
+    },
+    initData(){
+      let param={
+        'id':'1'
+      }
+       const data = this.$qs.stringify(param);
+       console.log(data)
+      this.$ajax.post('/ams/is/base', data)
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err);
+      });
     }
   },
   components:{

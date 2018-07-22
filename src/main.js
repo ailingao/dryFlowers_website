@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import qs from 'qs'
+import baseUrl from './assets/js/url.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import fontawesome from '@fortawesome/fontawesome'
@@ -24,6 +25,7 @@ Vue.config.productionTip = false
 import nav from './components/components/nav.vue'
 Vue.prototype.$ajax = axios
 Vue.prototype.$qs = qs
+Vue.prototype.$baseUrl = baseUrl
     // 公用组件全局注册
 Vue.component('navbar', nav)
     /* eslint-disable no-new */
