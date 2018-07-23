@@ -25,7 +25,6 @@ Vue.config.productionTip = false
 import nav from './components/components/nav.vue'
 Vue.prototype.$ajax = axios
 Vue.prototype.$qs = qs
-Vue.prototype.$baseUrl = baseUrl
     // 公用组件全局注册
 Vue.component('navbar', nav)
     /* eslint-disable no-new */

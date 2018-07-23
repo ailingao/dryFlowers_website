@@ -16,10 +16,10 @@ module.exports = {
                 // pathRewrite: {  //需要rewrite重写的, 如果在服务器端做了处理则可以不要这段
                 //   '^/ams': ''
                 // }
-              }
+            }
         },
         // Various Dev Server settings
-        host: '192.168.3.6', // can be overwritten by process.env.HOST
+        host: '192.168.16.94', // can be overwritten by process.env.HOST
         port: 8082, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
         autoOpenBrowser: false,
         errorOverlay: true,

@@ -72,7 +72,7 @@ import ynlabel from '../components/label'
 import pagination from '../components/pagination'
 import breadcrumb from '../components/breadcrumb'
 
-import base from '../../assets/js/url.js'
+import * as baseUrl from '../../assets/js/url.js'
 export default {
   data(){
     return{
@@ -109,12 +109,18 @@ export default {
       this.state=false
     },
     initData(){
-      let param={
-        'id':'1'
-      }
-       const data = this.$qs.stringify(param);
-       console.log(data)
-      this.$ajax.post('/ams/is/base', data)
+      var that=this
+      let data = that.$qs.stringify({
+          param: JSON.stringify({
+              id:'1',
+              type:'2'
+          })
+      })
+      that.$ajax({
+          url: `${baseUrl.addRecord}`,
+          method: 'post',
+          data: data 
+      })
       .then(res => {
         console.log(res)
       })
