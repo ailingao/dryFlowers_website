@@ -13,13 +13,17 @@ module.exports = {
             '/ams': {
                 target: 'http://47.106.86.118:8080',
                 changeOrigin: true,
-                // pathRewrite: {  //需要rewrite重写的, 如果在服务器端做了处理则可以不要这段
-                //   '^/ams': ''
-                // }
-              }
+                pathRewrite: { //需要rewrite重写的, 如果在服务器端做了处理则可以不要这段
+                    '^/ams': '/ams'
+                }
+            }
         },
         // Various Dev Server settings
+<<<<<<< HEAD
         host: 'localhost', // can be overwritten by process.env.HOST
+=======
+        host: '192.168.16.94', // can be overwritten by process.env.HOST
+>>>>>>> 7fd504c0b00d3735880d5c808f70c2f6c45f54b8
         port: 8082, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
         autoOpenBrowser: false,
         errorOverlay: true,
