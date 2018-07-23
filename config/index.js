@@ -13,9 +13,9 @@ module.exports = {
             '/ams': {
                 target: 'http://47.106.86.118:8080',
                 changeOrigin: true,
-                // pathRewrite: {  //需要rewrite重写的, 如果在服务器端做了处理则可以不要这段
-                //   '^/ams': ''
-                // }
+                pathRewrite: { //需要rewrite重写的, 如果在服务器端做了处理则可以不要这段
+                    '^/ams': '/ams'
+                }
             }
         },
         // Various Dev Server settings
