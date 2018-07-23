@@ -112,8 +112,8 @@ export default {
       let param={
         'id':'1'
       }
-       const data = this.$qs.stringify(param);
-       console.log(data)
+      const data = this.$qs.stringify(param);
+      console.log(data)
       this.$ajax.post('/ams/is/base', data)
       .then(res => {
         console.log(res)
