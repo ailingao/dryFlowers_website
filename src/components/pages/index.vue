@@ -1,7 +1,7 @@
 <template>
 <div :class="sliderState?classOne:classOneTwo">
   <!-- 移动端左侧导航条 -->
-  <mobileNav @menuClickTwo="getMenuClickTwo"></mobileNav>
+  <mobileNav @menuClickTwo="getMenuClickTwo" :navData='classifys' :navDataTwo='classifys'></mobileNav>
   <!-- 移动端左侧导航条 -->
   <!-- 网站内容 -->
   <div class="yn_mainContent clearfix" :style="height">
@@ -9,7 +9,7 @@
     <div class="yn_mask" @click="hideSlider"></div>
     <!-- 遮罩层 -->
     <!-- 网站pc导航栏 -->
-    <navbar :state="state" @menuClick="getMenuClick"></navbar>
+    <navbar :state="state" :navData='classifys' :navDataTwo='classifys' @menuClick="getMenuClick"></navbar>
     <!-- 网站pc导航栏 -->
     <!-- 广告位 -->
     <advertSpace></advertSpace>
@@ -81,7 +81,8 @@ export default {
       sliderState:false,
       state:'',
       classOne:'yn_main slider_nav',
-      classOneTwo:'yn_main'
+      classOneTwo:'yn_main',
+      classifys:'',//初始化导航栏数据
     }
   },
   created(){
@@ -112,17 +113,18 @@ export default {
       var that=this
       let data = that.$qs.stringify({
           param: JSON.stringify({
-              id:'1',
-              type:'2'
+              
           })
       })
       that.$ajax({
-          url: `${baseUrl.addRecord}`,
+          url: `${baseUrl.base}`,
           method: 'post',
           data: data 
       })
       .then(res => {
         console.log(res)
+        that.classifys=res.data.classifys
+        console.log(that.classifys)
       })
       .catch(err => {
         console.log(err);

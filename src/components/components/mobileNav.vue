@@ -10,16 +10,13 @@
           <a class="yn_listTitle" href="javascript:void(0)">测试标题</a>
         </div>
       </li>
-      <li v-for="(item,index) in 6" :key="index">
+      <li v-for="(item,index) in navData" :key="index" v-if="item.level==1">
         <!-- <a href="javascript:void(0)" class="yn_listTitle">测试标题</a> -->
         <div @click="toOthers($event)" >
-          <a class="yn_listTitle" href="javascript:void(0)">测试标题</a>
+          <a class="yn_listTitle" href="javascript:void(0)">{{item.name}}</a>
         </div>
-        <div @click="toOthers($event)">
-          <a class="yn_listItem" href="javascript:void(0)">测试列表</a>
-        </div>
-        <div  @click="toOthers($event)">
-          <a class="yn_listItem" href="javascript:void(0)">测试列表</a>
+        <div @click="toOthers($event)" v-for="(itemTwo,index) in navDataTwo" :key="index" v-if="itemTwo.level==2&&item.id==itemTwo.parent_id">
+          <a class="yn_listItem" href="javascript:void(0)">{{itemTwo.name}}</a>
         </div>
       </li>
     </ul>
@@ -28,6 +25,7 @@
 </template>
 <script>
 export default {
+  props:['navData','navDataTwo'],
   data(){
     return{
       height:'',
