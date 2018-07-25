@@ -15,10 +15,10 @@
       <div class="collapse navbar-collapse" >
         <ul class="nav navbar-nav yn_item" v-show="navState">
           <!-- <li class="active li" ><a class="a" href="javascript:void(0)">首页</a></li> -->
-          <li v-for="(item,index) in navData" :key="index" :class="actIndex==index?'active li':'li'" v-if="item.level==1"  @click="toOthers(index)">
+          <li v-for="(item,index) in baseData.classifys" :key="index" :class="actIndex==index?'active li':'li'" v-if="item.level==1"  @click="toOthers(index)">
             <a class="a" href="javascript:void(0)">{{item.name}}</a>
             <ul class="yn_itemList">
-              <li  @click.stop="toSecond" v-for="(itemTwo,index) in navDataTwo" :key="index" v-if="itemTwo.level==2&&item.id==itemTwo.parent_id">
+              <li  @click.stop="toSecond" v-for="(itemTwo,index) in baseData.classifys" :key="index" v-if="itemTwo.level==2&&item.id==itemTwo.parent_id">
                 <a href="javascript:void(0)">{{itemTwo.name}}</a>
               </li>
             </ul>
@@ -65,7 +65,7 @@
 <script>
 import * as baseUrl from '../../assets/js/url.js'
 export default {
-  props:['state','navData','navDataTwo'],
+  props:['state','baseData'],
   data(){
     return{
       searchState:false,//搜索框状态

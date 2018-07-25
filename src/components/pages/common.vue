@@ -1,7 +1,7 @@
 <template>
 <div :class="sliderState?classOne:classOneTwo">
   <!-- 移动端左侧导航条 -->
-  <mobileNav @menuClickTwo="getMenuClickTwo"></mobileNav>
+  <mobileNav @menuClickTwo="getMenuClickTwo" :baseData='baseData'></mobileNav>
   <!-- 移动端左侧导航条 -->
   <!-- 网站内容 -->
   <div class="yn_mainContent clearfix" :style="height">
@@ -9,7 +9,7 @@
     <div class="yn_mask" @click="hideSlider"></div>
     <!-- 遮罩层 -->
     <!-- 网站pc导航栏 -->
-    <navbar :state="state" @menuClick="getMenuClick"></navbar>
+    <navbar :state="state" :baseData='baseData' @menuClick="getMenuClick"></navbar>
     <!-- 网站pc导航栏 -->
     <!-- 广告位 -->
     <advertSpace></advertSpace>
@@ -67,7 +67,8 @@ export default {
       sliderState:false,
       state:'',
       classOne:'yn_main slider_nav',
-      classOneTwo:'yn_main'
+      classOneTwo:'yn_main',
+      baseData:''
     }
   },
   created(){
