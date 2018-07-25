@@ -2,7 +2,7 @@
 <div class="swiper">
   <el-carousel :interval="5000" arrow="always">
     <el-carousel-item v-for="(item,index) in baseData.posters" :key="index">
-      <img :src="item.image_url" alt="">
+      <img style="width:100%;height:100%;display: block;" :src="item.image_url" alt="">
     </el-carousel-item>
   </el-carousel>
 </div>
@@ -29,6 +29,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+
 .yn_topTips{
   background: #fafafa;
   border-bottom: 1px solid #ddd;

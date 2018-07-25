@@ -1,17 +1,6 @@
 <template>
-<div :class="sliderState?classOne:classOneTwo">
-  <!-- 移动端左侧导航条 -->
-  <mobileNav @menuClickTwo="getMenuClickTwo"></mobileNav>
-  <!-- 移动端左侧导航条 -->
-  <!-- 网站内容 -->
-  <div class="yn_mainContent clearfix" :style="height">
-    <!-- 遮罩层 -->
-    <div class="yn_mask" @click="hideSlider"></div>
-    <!-- 遮罩层 -->
-    <!-- 网站pc导航栏 -->
-    <navbar :state="state" @menuClick="getMenuClick"></navbar>
-    <!-- 网站pc导航栏 -->
-    <!-- 广告位 -->
+<div class="detail">
+  <!-- 广告位 -->
     <advertSpace></advertSpace>
     <!-- 广告位 -->
     <!-- 下方左右布局内容 -->
@@ -43,12 +32,6 @@
      
     </div>
     <!-- 下方左右布局内容 -->
-    <!-- 页脚 -->
-      <bottomFooter></bottomFooter>
-    <!-- 页脚 -->
-  </div>
-  <!-- 网站内容 -->
- 
 </div>
 </template>
 <script>

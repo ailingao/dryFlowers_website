@@ -17,13 +17,13 @@
           <!-- <li class="active li" ><a class="a" href="javascript:void(0)">首页</a></li> -->
           <li v-for="(item,index) in baseData.classifys" :key="index" :class="actIndex==index?'active li':'li'" v-if="item.level==1"  @click="toOthers(index)">
             <a class="a" href="javascript:void(0)">{{item.name}}</a>
-            <ul class="yn_itemList">
+            <ul class="yn_itemList" v-if="item.name!='首页'">
               <li  @click.stop="toSecond" v-for="(itemTwo,index) in baseData.classifys" :key="index" v-if="itemTwo.level==2&&item.id==itemTwo.parent_id">
                 <a href="javascript:void(0)">{{itemTwo.name}}</a>
               </li>
             </ul>
           </li>
-          <li class="li"><a href="javascript:void(0)" class="yn_itemMore a">更多<span class="u-arrow u-arrow-down"></span></a></li>
+          <!-- <li class="li"><a href="javascript:void(0)" class="yn_itemMore a">更多<span class="u-arrow u-arrow-down"></span></a></li> -->
         </ul>
         <div class="yn_btnGroup">
           <div class="yn_searchGroup">

@@ -11,7 +11,7 @@
     <!-- 网站pc导航栏 -->
     <navbar :state="state" :baseData='baseData' @menuClick="getMenuClick"></navbar>
     <!-- 网站pc导航栏 -->
-    <router-view :baseData='baseData'></router-view>
+    <router-view :baseData='baseData' :listData='listData'></router-view>
     
     <!-- 页脚 -->
       <bottomFooter></bottomFooter>
@@ -47,11 +47,13 @@ export default {
       classOne:'yn_main slider_nav',
       classOneTwo:'yn_main',
       baseData:'',//基本数据
+      listData:''
     }
   },
   created(){
     this.height='height:'+(document.documentElement.clientHeight || document.body.clientHeight)+'px'
-    this.initData()
+    this.initData()//获取网页基本信息
+    this.list()//获取网页列表信息
   },
   methods:{
     getMenuClick(val){//接收主菜单导航按钮点击传值
@@ -88,6 +90,28 @@ export default {
       .then(res => {
         console.log(res)
         that.baseData=res.data
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    },
+    list(){
+      var that=this
+      let data = that.$qs.stringify({
+          param: JSON.stringify({
+              pageNo:'1',
+              pageSize:'10',
+              name:'文章'
+          })
+      })
+      that.$ajax({
+          url: `${baseUrl.articleList}`,
+          method: 'post',
+          data: data 
+      })
+      .then(res => {
+        console.log(res)
+        that.listData=res.data
       })
       .catch(err => {
         console.log(err);
