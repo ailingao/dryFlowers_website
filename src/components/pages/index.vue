@@ -1,7 +1,7 @@
 <template>
 <div :class="sliderState?classOne:classOneTwo">
   <!-- 移动端左侧导航条 -->
-  <mobileNav @menuClickTwo="getMenuClickTwo"></mobileNav>
+  <mobileNav @menuClickTwo="getMenuClickTwo" :baseData='baseData'></mobileNav>
   <!-- 移动端左侧导航条 -->
   <!-- 网站内容 -->
   <div class="yn_mainContent clearfix" :style="height">
@@ -9,46 +9,10 @@
     <div class="yn_mask" @click="hideSlider"></div>
     <!-- 遮罩层 -->
     <!-- 网站pc导航栏 -->
-    <navbar :state="state" @menuClick="getMenuClick"></navbar>
+    <navbar :state="state" :baseData='baseData' @menuClick="getMenuClick"></navbar>
     <!-- 网站pc导航栏 -->
-    <!-- 广告位 -->
-    <advertSpace></advertSpace>
-    <!-- 广告位 -->
-    <!-- 下方左右布局内容 -->
-    <div class="yn_container container-fluid">
-      <div class="row clearfix">
-        <div class="col-xs-12 col-sm-12 col-md-8 yn_containerLeft">
-          <!-- 主页中心 左侧-->
-          <div class="yn_mainLeft">
-            <div class="yn_topTips">
-              <span class="glyphicon glyphicon-volume-up yn_tipsIcon"></span>
-              <span> 微信公众号：DIY手工制作小站 ，欢迎关注！</span>
-            </div>
-            <swiper></swiper>
-            <breadcrumb></breadcrumb>
-            <ynlabel></ynlabel>
-            <leftBoxOne></leftBoxOne>
-            <leftBoxTwo></leftBoxTwo>
-            <pagination></pagination>
-          </div>
-          <!-- <mainLeft></mainLeft> -->
-          <!-- 主页中心 左侧-->
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-4 yn_containerRight">
-          <!-- 主页右侧模块一 -->
-          <rightBoxOne></rightBoxOne>
-           <!-- 主页右侧模块一 结束-->
-          <!-- 主页右侧模块二 -->
-          <rightBoxTwo></rightBoxTwo>
-          <!-- 主页右侧模块二结束 --> 
-          <!--  右侧二维码 -->
-          <wxERCode></wxERCode>
-           <!--  右侧二维码 -->
-        </div>
-      </div>
-     
-    </div>
-    <!-- 下方左右布局内容 -->
+    <router-view :baseData='baseData' :listData='listData'></router-view>
+    
     <!-- 页脚 -->
       <bottomFooter></bottomFooter>
     <!-- 页脚 -->
@@ -81,12 +45,15 @@ export default {
       sliderState:false,
       state:'',
       classOne:'yn_main slider_nav',
-      classOneTwo:'yn_main'
+      classOneTwo:'yn_main',
+      baseData:'',//基本数据
+      listData:''
     }
   },
   created(){
     this.height='height:'+(document.documentElement.clientHeight || document.body.clientHeight)+'px'
-    this.initData()
+    this.initData()//获取网页基本信息
+    this.list()//获取网页列表信息
   },
   methods:{
     getMenuClick(val){//接收主菜单导航按钮点击传值
@@ -112,17 +79,39 @@ export default {
       var that=this
       let data = that.$qs.stringify({
           param: JSON.stringify({
-              id:'1',
-              type:'2'
+              
           })
       })
       that.$ajax({
-          url: `${baseUrl.addRecord}`,
+          url: `${baseUrl.base}`,
           method: 'post',
           data: data 
       })
       .then(res => {
         console.log(res)
+        that.baseData=res.data
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    },
+    list(){
+      var that=this
+      let data = that.$qs.stringify({
+          param: JSON.stringify({
+              pageNo:'1',
+              pageSize:'10',
+              name:'文章'
+          })
+      })
+      that.$ajax({
+          url: `${baseUrl.articleList}`,
+          method: 'post',
+          data: data 
+      })
+      .then(res => {
+        console.log(res)
+        that.listData=res.data
       })
       .catch(err => {
         console.log(err);

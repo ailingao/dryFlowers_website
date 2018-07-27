@@ -15,15 +15,15 @@
       <div class="collapse navbar-collapse" >
         <ul class="nav navbar-nav yn_item" v-show="navState">
           <!-- <li class="active li" ><a class="a" href="javascript:void(0)">首页</a></li> -->
-          <li v-for="(item,index) in 6" :key="index" :class="actIndex==index?'active li':'li'"  @click="toOthers(index)">
-            <a class="a" href="javascript:void(0)">小制作</a>
-            <ul class="yn_itemList">
-              <li v-for="(item,index) in 8" :key="index" @click.stop="toSecond">
-                <a href="javascript:void(0)">小制作</a>
+          <li v-for="(item,index) in baseData.classifys" :key="index" :class="actIndex==index?'active li':'li'" v-if="item.level==1"  @click="toOthers(index)">
+            <a class="a" href="javascript:void(0)">{{item.name}}</a>
+            <ul class="yn_itemList" v-if="item.name!='首页'">
+              <li  @click.stop="toSecond" v-for="(itemTwo,index) in baseData.classifys" :key="index" v-if="itemTwo.level==2&&item.id==itemTwo.parent_id">
+                <a href="javascript:void(0)">{{itemTwo.name}}</a>
               </li>
             </ul>
           </li>
-          <li class="li"><a href="javascript:void(0)" class="yn_itemMore a">更多<span class="u-arrow u-arrow-down"></span></a></li>
+          <!-- <li class="li"><a href="javascript:void(0)" class="yn_itemMore a">更多<span class="u-arrow u-arrow-down"></span></a></li> -->
         </ul>
         <div class="yn_btnGroup">
           <div class="yn_searchGroup">
@@ -63,11 +63,9 @@
 </div>
 </template>
 <script>
-$(function(){
-  
-})
+import * as baseUrl from '../../assets/js/url.js'
 export default {
-  props:['state'],
+  props:['state','baseData'],
   data(){
     return{
       searchState:false,//搜索框状态
@@ -131,6 +129,10 @@ export default {
     },
     toSecond(){
       this.$router.push({'path':'/detail'})
+    },
+    init(){
+      var timestamp = Math.round(new Date() / 1000)
+      console.log(timestamp)
     }
   },
   mounted () {
@@ -138,12 +140,13 @@ export default {
       window.onresize = () => {
           return (() => {
               window.screenWidth = document.body.clientWidth
-              that.screenWidth = window.screenWidth
+              that.screenWidth = window.screenWidth 
           })()
       }
   },
   created(){
     this.screenWidth=document.documentElement.clientWidth || document.body.clientWidth
+    this.init()
   },
   watch: {
       screenWidth (val) {
