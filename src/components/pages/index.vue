@@ -53,7 +53,7 @@ export default {
   created(){
     this.height='height:'+(document.documentElement.clientHeight || document.body.clientHeight)+'px'
     this.initData()//获取网页基本信息
-    this.list()//获取网页列表信息
+    // this.list()//获取网页列表信息
   },
   methods:{
     getMenuClick(val){//接收主菜单导航按钮点击传值

@@ -54,18 +54,39 @@ import leftBoxTwo from '../components/leftBoxTwo'
 import ynlabel from '../components/label'
 import pagination from '../components/pagination'
 import breadcrumb from '../components/breadcrumb'
+
+import * as baseUrl from '../../assets/js/url.js'
 export default {
   props:['baseData'],
   data(){
     return{
-      
+     
     }
   },
-  methods:{
+  created(){
+    this.initData()//获取网页基本信息
     
   },
-
-  created(){
+  methods:{
+     initData(){
+      var that=this
+      let data = that.$qs.stringify({
+          param: JSON.stringify({
+            
+          })
+      })
+      that.$ajax({
+          url: `${baseUrl.addRecord}`,
+          method: 'post',
+          data: data 
+      })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    },
     
   },
   components:{

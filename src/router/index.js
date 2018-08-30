@@ -13,30 +13,21 @@ export default new Router({
             name: 'index',
             component: index,
             children: [{
-                path: '',
+                path: '/',
                 name: 'home',
                 component: home
-            }]
-        },
-        {
-            path: '/',
-            component: index,
-            children: [{
-                    path: '',
-                    name: 'home',
-                    component: home
-                },
-                {
-                    path: '/common',
-                    name: 'common',
-                    component: common
-                },
-                {
-                    path: '/detail',
-                    name: 'detail',
-                    component: detail
-                }
-            ]
+            },
+            {
+                path: '/common',
+                name: 'common',
+                component: common
+            },
+            {
+                path: '/detail',
+                name: 'detail',
+                component: detail
+            }
+        ]
         }
     ]
 })
